@@ -133,7 +133,6 @@ const FoodDetails: React.FC = () => {
   }, [isFavorite, food]);
 
   const cartTotal = useMemo(() => {
-    // Calculate cartTotal
     const extrasTotal = extras.reduce((accumulator, extra) => {
       return accumulator + extra.quantity * extra.value;
     }, 0);
@@ -147,14 +146,12 @@ const FoodDetails: React.FC = () => {
     // Finish the order and save on the API
   }
 
-  // Calculate the correct icon name
   const favoriteIconName = useMemo(
     () => (isFavorite ? 'favorite' : 'favorite-border'),
     [isFavorite],
   );
 
   useLayoutEffect(() => {
-    // Add the favorite icon on the right of the header bar
     navigation.setOptions({
       headerRight: () => (
         <MaterialIcon
